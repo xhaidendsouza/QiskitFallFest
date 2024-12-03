@@ -50,8 +50,8 @@ observed_0 = result_counts.get('0', 0)
 total = observed_1 + observed_0
 
 # Theoretical probabilities of 1 and 0
-expected_0 = int(bias*100)*total//100  # Probability of 0 based on the input bias
-expected_1 = int(100 - bias*100)*total//100  # Probability of 1
+expected_0 = bias*total # Probability of 0 based on the input bias
+expected_1 = (1-bias)*total  # Probability of 1
 
 # Handle division by zero for percent difference calculations
 def safe_percent_diff(expected, observed):
